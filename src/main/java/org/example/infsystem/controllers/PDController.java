@@ -59,19 +59,15 @@ public class PDController {
     @PutMapping("/edit/{id}")
     public ResponseEntity<PasswordData> updateUsServ(@PathVariable Long id, @RequestBody PasswordData updatedData) {
         try {
-            // Получаем текущую запись из базы
             PasswordData existingUS = serv.get(id);
             if (existingUS != null) {
-                // Обновляем только те поля, которые должны меняться
                 existingUS.setUser_login(updatedData.getUser_login());
                 existingUS.setUser_password(updatedData.getUser_password());
 
-                // Обновляем address_id, если он передан
                 if (updatedData.getAddressId() != null) {
                     existingUS.setAddressId(updatedData.getAddressId());
                 }
 
-                // Сохраняем изменения
                 PasswordData savedUS = serv.save(existingUS);
                 return ResponseEntity.ok(savedUS);
             } else {

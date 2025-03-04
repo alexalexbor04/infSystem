@@ -9,7 +9,8 @@ import java.util.List;
 
 public interface PasswordDataRepo extends JpaRepository<PasswordData, Long> {
 
-    @Query("select new org.example.infsystem.dto.PasswordDataDTO(pd.id, u.username, pd.user_login, a.address_name, a.url, pd.user_password) " +
+    @Query("select new org.example.infsystem.dto.PasswordDataDTO(pd.id, u.username, pd.user_login, a.address_name, " +
+            "a.url, pd.user_password, u.id, a.id) " +
             "from PasswordData pd " +
             "join pd.userId u " +
             "join pd.address_id a")

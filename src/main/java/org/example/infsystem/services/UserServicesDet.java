@@ -1,15 +1,10 @@
 package org.example.infsystem.services;
 
-import org.example.infsystem.dto.UserDTO;
-import org.example.infsystem.entities.User;
 import org.example.infsystem.repos.UserRepo;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServicesDet implements UserDetailsService {

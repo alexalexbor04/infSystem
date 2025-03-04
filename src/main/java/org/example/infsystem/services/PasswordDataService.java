@@ -22,7 +22,9 @@ public class PasswordDataService {
                         us.getUser_login(),
                         us.getAddressId().getAddress_name(),
                         us.getAddressId().getUrl(),
-                        us.getUser_password()))
+                        us.getUser_password(),
+                        us.getUserId().getId(),
+                        us.getAddressId().getId()))
                 .toList();
     }
 

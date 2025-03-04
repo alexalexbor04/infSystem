@@ -1,7 +1,8 @@
 import Chart from 'chart.js/auto';
 import {getAuthHeaders} from "./app_funcs.js"; // Автоматическая настройка типов
 
-const apiDataUrl = "http://localhost:8081/api/data/chart";
+// const apiDataUrl = "http://localhost:8081/api/data/chart";
+const apiDataUrl = "http://localhost:8081/data";
 const servicesUrl = "http://localhost:8081/addresses";
 
 async function loadChartData() {
@@ -24,7 +25,7 @@ async function loadChartData() {
         });
 
         passwordData.forEach(data => {
-            const addressId = data.addressId?.id;
+            const addressId = data.addressId;
             if (addressId && serviceCounts[addressId] !== undefined) {
                 serviceCounts[addressId]++;
             }

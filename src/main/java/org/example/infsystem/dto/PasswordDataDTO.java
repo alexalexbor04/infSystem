@@ -7,15 +7,19 @@ public class PasswordDataDTO {
     private String address_name;
     private String url;
     private String userPassword;
+    private Long userId;
+    private Long addressId;
 
     public PasswordDataDTO(Long id, String username, String login,
-                           String address_name, String url, String userPassword) {
+                           String address_name, String url, String userPassword, Long userId, Long addressId) {
         this.id = id;
         this.username = username;
         this.login = login;
         this.address_name = address_name;
         this.url = url;
         this.userPassword = userPassword;
+        this.userId = userId;
+        this.addressId = addressId;
     }
 
     public Long getId() {
@@ -64,5 +68,21 @@ public class PasswordDataDTO {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(Long addressId) {
+        this.addressId = addressId;
     }
 }
