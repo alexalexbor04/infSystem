@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Вход</title>
+</head>
+<body>
+<h1>Вход</h1>
+<form id="login-form">
+  <label for="username"></label>
+  <input type="text" id="username" name="username" placeholder="Имя пользователя" required>
+  <br>
+  <label for="password"></label>
+  <input type="password" id="password" name="password" placeholder="Пароль" required>
+  <br>
+  <button type="submit">Войти</button>
+</form>
+<p>Нет аккаунта? <a href="/auth/register">Зарегистрируйтесь</a></p>
+
+<div id="error-message" style="color: indianred; display: none;"></div>
+
+<script src="./src/jsFiles/login.js" defer></script>
+</body>
+</html>

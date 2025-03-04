@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование данных об авторизации</title>
+</head>
+<body>
+<h1>Редактирование данных об авторизации</h1>
+
+<form id="edit-form">
+    <input type="text" id="login" placeholder="Логин" required><br>
+
+    <input type="text" id="password" autocomplete="new-password" placeholder="Пароль" required><br>
+
+<!--    <label for="address_name">Сервис:</label>-->
+    <select id="address_name">
+        <option value="">Выберите сервис</option>
+    </select><br>
+
+    <label for="user_id">Имя пользователя:</label>
+    <input type="text" id="user_id" readonly><br>
+
+    <button type="submit">Сохранить</button>
+</form>
+
+<script type="module" src="../../src/jsFiles/update_data.js"></script>
+</body>
+</html>

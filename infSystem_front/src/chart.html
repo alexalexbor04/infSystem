@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Гистограмма популярности сервисов</title>
+    <style>
+        canvas {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Гистограмма: Количество записей по сервисам</h1>
+
+<a href="/admin/users">Пользователи</a></p>
+<a href="/addresses">Сервисы</a></p>
+<a href="/data">Данные об авторизации</a></p>
+<a href="/chart">Гистограмма</a></p>
+<a href="/about">Об авторе</a></p>
+<a href="/auth/login">Выйти</a></p>
+
+<canvas id="myChart"></canvas>
+
+<!-- Chart.js не подключаем напрямую, так как он импортируется через npm -->
+<script type="module" src="../src/jsFiles/chart.js"></script>
+</body>
+</html>

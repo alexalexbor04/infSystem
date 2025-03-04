@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+<body>
+<h1>Пользователи</h1>
+
+<a href="/admin/users">Пользователи</a></p>
+<a href="/addresses">Сервисы</a></p>
+<a href="/data">Данные об авторизации</a></p>
+<a href="/chart">Гистограмма</a></p>
+<a href="/about">Об авторе</a></p>
+<a href="/auth/login">Выйти</a></p>
+
+<div style="margin-top: 10px;">
+    <button onclick="filterAndSortUsers('username')">Сортировать по имени пользователя</button>
+</div>
+
+<div class="filter-form">
+    <input type="text" id="keyword" placeholder="Поиск">
+    <button onclick="filterAndSortUsers()">Найти</button>
+    <button onclick="resetFilters()">Очистить</button>
+    <select id="filter-status" class="form-select">
+        <option value="">Роль</option>
+        <option value="admin">admin</option>
+        <option value="user">user</option>
+    </select>
+</div>
+
+<table id="users-table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Имя пользователя</th>
+        <th>ФИО</th>
+        <th>Email</th>
+        <th>Роль</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<div id="total-rows">
+    Всего записей: <span id="row-count">0</span>
+</div>
+
+<script type="module" src="../src/jsFiles/users.js" defer></script>
+
+</body>
+</html>
