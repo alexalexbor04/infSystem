@@ -2,7 +2,7 @@ import {getAuthHeaders} from "./app_funcs.js";
 
 const apiUrl = "http://localhost:8081/data/new";
 const servicesUrl = "http://localhost:8081/addresses";
-const userUrl = "http://localhost:8081/api/cur-user"; // Исправленный URL
+const userUrl = "http://localhost:8081/api/cur-user";
 
 fetch(servicesUrl, { headers: getAuthHeaders() })
     .then(response => response.json())
@@ -23,6 +23,8 @@ fetch(userUrl, { headers: getAuthHeaders() })
         document.getElementById("user_id").value = userId;
     })
     .catch(error => console.error("Ошибка загрузки данных пользователя:", error));
+
+
 
 document.getElementById("add-form").addEventListener("submit", function(event) {
     event.preventDefault();

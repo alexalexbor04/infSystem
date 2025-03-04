@@ -53,13 +53,6 @@ public class UpdateController {
         }
     }
 
-    @GetMapping("/data/chart")
-    public ResponseEntity<List<PasswordData>> getPassChart() {
-        List<PasswordData> listPD;
-        listPD = pwdService.getAll();
-        return ResponseEntity.ok(listPD);
-    }
-
     @GetMapping("/cur-user")
     public ResponseEntity<Long> someEndpoint(@RequestHeader("Authorization") String token) {
         Long userId = JwtAuthenticationFilter.extractUserId(token.replace("Bearer ", ""));
