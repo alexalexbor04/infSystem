@@ -1,5 +1,6 @@
-import {updateRowCount, deleteRecord,
-    getUserRole
+import {
+    updateRowCount, deleteRecord,
+    getUserRole, logout
 } from "./app_funcs.js";
 
 const apiUrl = "http://localhost:8081/data";
@@ -105,13 +106,12 @@ function resetFilters() {
 }
 
 function deleteDataRow(id) {
-    const userRole = getUserRole();
-    if (userRole === "user") {
-        alert("У вас нет прав на удаление сервисов.");
-        return;
-    }
     deleteRecord(id, apiUrl, fetchData);
 }
+
+document.getElementById('logout-button').addEventListener('click', () => {
+    logout();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchData();

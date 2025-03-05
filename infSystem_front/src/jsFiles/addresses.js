@@ -1,6 +1,6 @@
 import {
     getAuthHeaders, updateRowCount, deleteRecord,
-    getUserRole
+    getUserRole, logout
 } from "./app_funcs.js";
 
 const apiUrl = "http://localhost:8081/addresses";
@@ -112,6 +112,10 @@ function deleteAddresses(id) {
     }
     deleteRecord(id, apiUrl, fetchAddresses);
 }
+
+document.getElementById('logout-button').addEventListener('click', () => {
+    logout();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchAddresses();

@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class PasswordDataService {
 
+    private final PasswordDataRepo repo;
+
     @Autowired
-    private PasswordDataRepo repo;
+    public PasswordDataService(PasswordDataRepo repo) {
+        this.repo = repo;
+    }
 
     public List<PasswordDataDTO> listAll() {
         return repo.findAll().stream()
@@ -28,9 +32,9 @@ public class PasswordDataService {
                 .toList();
     }
 
-    public List<PasswordData> getAll() {
-        return repo.listAllAsList();
-    }
+//    public List<PasswordData> getAll() {
+//        return repo.listAllAsList();
+//    }
 
     public PasswordDataDTO getById(Long id) {
         PasswordData pd =  repo.findById(id).

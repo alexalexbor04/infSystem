@@ -1,5 +1,5 @@
 import Chart from 'chart.js/auto';
-import {getAuthHeaders} from "./app_funcs.js"; // Автоматическая настройка типов
+import {getAuthHeaders, logout} from "./app_funcs.js"; // Автоматическая настройка типов
 
 const apiDataUrl = "http://localhost:8081/data";
 const servicesUrl = "http://localhost:8081/addresses";
@@ -68,3 +68,7 @@ async function loadChartData() {
 }
 
 loadChartData();
+
+document.getElementById('logout-button').addEventListener('click', () => {
+    logout();
+});

@@ -1,6 +1,6 @@
 import {
     getAuthHeaders, updateRowCount, deleteRecord,
-    getUserRole, checkUserRolePage
+    getUserRole, checkUserRolePage, logout
 } from "./app_funcs.js";
 
 const apiUrl = "http://localhost:8081/admin/users";
@@ -123,6 +123,10 @@ function deleteUsers(id) {
     }
     deleteRecord(id, apiUrl, fetchUsers);
 }
+
+document.getElementById('logout-button').addEventListener('click', () => {
+    logout();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchUsers();

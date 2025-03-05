@@ -109,3 +109,8 @@ function checkUserRolePage(path, message) {
     }
 }
 
+export function logout() {
+    localStorage.removeItem('token'); // Удаляем токен
+    window.location.href = '/auth/logout';  // Перенаправляем на страницу входа
+}
+

@@ -20,16 +20,5 @@ public class UserServicesDet implements UserDetailsService {
         return repo.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Пользователь не найден " + username));
     }
-
-//    public UserDTO convertToDTO(User user) {
-//        return new UserDTO(user.getId(), user.getUsername(), user.getEmail(), user.getRole(), user.getFull_name());
-//    }
-//
-//    public List<UserDTO> getAllUsers() {
-//        return repo.findAll().stream()
-//                .map(this::convertToDTO)
-//                .collect(Collectors.toList());
-//
-//    }
 }
 
