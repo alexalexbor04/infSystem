@@ -44,7 +44,7 @@ function fetchData() {
 }
 
 function renderTableData(data) {
-    const tableBody = document.querySelector("#data-table tbody");
+    const tableBody = document.querySelector("#data-table");
     tableBody.innerHTML = "";
 
     if (data.length === 0) {

@@ -39,12 +39,12 @@ function fetchAddresses() {
             console.error("ошибка fetch:", error);
             console.log(localStorage.getItem("token"));
             alert("Ошибка загрузки данных. Пожалуйста, проверьте авторизацию.");
-            window.location.href = "/auth/login";
+            // window.location.href = "/auth/login";
         });
 }
 
 function renderTable(data) {
-    const tableBody = document.querySelector("#addresses-table tbody");
+    const tableBody = document.querySelector("#addresses-table");
     tableBody.innerHTML = "";
 
     const userRole = getUserRole();

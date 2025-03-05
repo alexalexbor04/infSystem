@@ -7,7 +7,6 @@ import org.example.infsystem.repos.UserRepo;
 import org.example.infsystem.services.UserServicesDet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,7 +27,6 @@ public class UserController {
         this.serv = serv;
     }
 
-    @PreAuthorize("hasRole('admin')")
     @GetMapping("/users")
     public ResponseEntity<List<User>> listUsers() {
         List<User> users = userRepo.findAll();
@@ -42,7 +40,6 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    @PreAuthorize("hasRole('admin')")
     @PutMapping("/users/{id}/change-role")
     public ResponseEntity<String> changeRole(@PathVariable("id") Long id, @RequestBody Map<String, String> body) {
 
@@ -58,7 +55,6 @@ public class UserController {
         return ResponseEntity.ok("Роль пользователя изменена");
     }
 
-    @PreAuthorize("hasRole('admin')")
     @DeleteMapping("/users/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable("id") Long id) {
         User user = userRepo.findById(id)

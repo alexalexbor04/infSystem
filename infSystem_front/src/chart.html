@@ -2,28 +2,31 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гистограмма популярности сервисов</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        canvas {
-            max-width: 800px;
-            margin: 20px auto;
-        }
+        body { background-color: #f7f2e7; }
+        .container { max-width: 900px; margin: 50px auto; background-color: #fff6e5; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        canvas { max-width: 800px; margin: 20px auto; }
+        .btn-custom { background-color: #d6c4a6; color: #3b312f; }
+        .btn-custom:hover { background-color: #c5b295; }
     </style>
 </head>
 <body>
-
-<h1>Гистограмма: Количество записей по сервисам</h1>
-
-<a href="/admin/users">Пользователи</a></p>
-<a href="/addresses">Сервисы</a></p>
-<a href="/data">Данные об авторизации</a></p>
-<a href="/chart">Гистограмма</a></p>
-<a href="/about">Об авторе</a></p>
-<button id="logout-button" >Выйти</button></p>
-
-<canvas id="myChart"></canvas>
-
-<!-- Chart.js не подключаем напрямую, так как он импортируется через npm -->
+<div class="container text-center">
+    <h2 class="mb-4">Гистограмма: Количество записей по сервисам</h2>
+    <div class="mb-3">
+        <a class="btn btn-custom mx-2" href="/admin/users">Пользователи</a>
+        <a class="btn btn-custom mx-2" href="/addresses">Сервисы</a>
+        <a class="btn btn-custom mx-2" href="/data">Данные об авторизации</a>
+        <a class="btn btn-custom mx-2" href="/chart">Гистограмма</a>
+        <a class="btn btn-custom mx-2" href="/about">Об авторе</a>
+        <button id="logout-button" class="btn btn-danger mx-2">Выйти</button>
+    </div>
+    <canvas id="myChart"></canvas>
+</div>
 <script type="module" src="../src/jsFiles/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

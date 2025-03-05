@@ -40,12 +40,12 @@ function fetchUsers() {
             console.error("ошибка fetch:", error);
             console.log(localStorage.getItem("token"));
             alert("Ошибка загрузки данных. Пожалуйста, проверьте авторизацию.");
-            window.location.href = "/auth/login";
+            // window.location.href = "/auth/login";
         });
 }
 
 function renderTable(userData) {
-    const tableBody = document.querySelector("#users-table tbody");
+    const tableBody = document.querySelector("#users-table");
     tableBody.innerHTML = "";
 
     if (userData.length === 0) {
