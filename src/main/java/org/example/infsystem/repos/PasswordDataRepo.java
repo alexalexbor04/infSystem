@@ -18,4 +18,5 @@ public interface PasswordDataRepo extends JpaRepository<PasswordData, Long> {
 
     @Query("select p from PasswordData p")
     List<PasswordData> listAllAsList();
+
 }

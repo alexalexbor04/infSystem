@@ -32,6 +32,25 @@ public class PasswordDataService {
         return repo.listAllAsList();
     }
 
+    public PasswordDataDTO getById(Long id) {
+        PasswordData pd =  repo.findById(id).
+                orElseThrow(() -> new RuntimeException("No PasswordData found with id: " + id));
+        return new PasswordDataDTO(
+                pd.getId(),
+                pd.getUserId().getUsername(),
+                pd.getUser_login(),
+                pd.getAddressId().getAddress_name(),
+                pd.getAddressId().getUrl(),
+                pd.getUser_password(),
+                pd.getUserId().getId(),
+                pd.getAddressId().getId()
+        );
+    }
+
+    public PasswordData get(Long id) {
+        return repo.findById(id).get();
+    }
+
     public PasswordData save (PasswordData user) {
         repo.save(user);
         return user;
@@ -41,7 +60,4 @@ public class PasswordDataService {
         repo.deleteById(id);
     }
 
-    public PasswordData get(Long id) {
-        return repo.findById(id).get();
-    }
 }

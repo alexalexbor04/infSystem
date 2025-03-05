@@ -1,8 +1,8 @@
 package org.example.infsystem.controllers;
 
 import org.example.infsystem.config.JwtAuthenticationFilter;
+import org.example.infsystem.dto.PasswordDataDTO;
 import org.example.infsystem.entities.Address;
-import org.example.infsystem.entities.PasswordData;
 import org.example.infsystem.services.AddressService;
 import org.example.infsystem.services.PasswordDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -40,9 +39,9 @@ public class UpdateController {
     }
 
     @GetMapping("/data/{id}")
-    public ResponseEntity<PasswordData> getPassById(@PathVariable Long id) {
+    public ResponseEntity<PasswordDataDTO> getPassById(@PathVariable Long id) {
         try {
-            PasswordData data = pwdService.get(id);
+            PasswordDataDTO data = pwdService.getById(id);
             if (data != null) {
                 return ResponseEntity.ok(data);
             } else {
@@ -56,6 +55,6 @@ public class UpdateController {
     @GetMapping("/cur-user")
     public ResponseEntity<Long> someEndpoint(@RequestHeader("Authorization") String token) {
         Long userId = JwtAuthenticationFilter.extractUserId(token.replace("Bearer ", ""));
-        return ResponseEntity.ok( userId);
+        return ResponseEntity.ok(userId);
     }
 }

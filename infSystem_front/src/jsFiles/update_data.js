@@ -29,10 +29,10 @@ fetch(`${apiUrl}/${recordId}`, {
     headers: getAuthHeaders()})
     .then(response => response.json())
     .then(data => {
-        document.getElementById("login").value = data.user_login;
-        document.getElementById("password").value = data.user_password;
-        document.getElementById("address_name").value = data.address_id;
-        document.getElementById("user_id").value = data.userId.username;
+        document.getElementById("login").value = data.login;
+        document.getElementById("password").value = data.userPassword;
+        document.getElementById("address_name").value = data.addressId;
+        document.getElementById("user_id").value = data.userName;
     })
     .catch(error => {
         console.error("Ошибка загрузки данных:", error);
