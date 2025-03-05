@@ -39,7 +39,7 @@ function fetchData() {
             console.error("ошибка fetch:", error);
             console.log(localStorage.getItem("token"));
             alert("Ошибка загрузки данных. Пожалуйста, проверьте авторизацию.");
-            window.location.href = "/auth/login";
+            logout();
         });
 }
 
