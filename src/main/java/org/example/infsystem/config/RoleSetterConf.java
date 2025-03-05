@@ -35,7 +35,7 @@ public class RoleSetterConf implements CommandLineRunner {
             return repoRole.save(role);
         });
 
-        if (!repoUser.findByUsername("adminDeya").isPresent()) {
+        if (repoUser.findByUsername("adminDeya").isEmpty()) {
             User admin = new User();
             admin.setUsername("adminDeya");
             admin.setEmail("admin@email.com");

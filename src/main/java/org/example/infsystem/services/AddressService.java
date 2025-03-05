@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class AddressService {
 
+    private final AddressRepo repo;
+
     @Autowired
-    private AddressRepo repo;
+    public AddressService(AddressRepo repo) {
+        this.repo = repo;
+    }
 
     public List<Address> listAll() {
         return repo.searchAddress();

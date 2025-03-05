@@ -20,14 +20,16 @@ import java.util.Map;
 @RequestMapping("/auth")
 public class AuthController {
 
-    @Autowired
-    private UserRepo userRepo;
+    private final UserRepo userRepo;
+    private final RoleRepo roleRepo;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    private RoleRepo roleRepo;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    public AuthController(UserRepo userRepo, RoleRepo roleRepo, PasswordEncoder passwordEncoder) {
+        this.userRepo = userRepo;
+        this.roleRepo = roleRepo;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {

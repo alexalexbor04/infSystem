@@ -1,6 +1,7 @@
 package org.example.infsystem.services;
 
 import org.example.infsystem.repos.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -11,6 +12,7 @@ public class UserServicesDet implements UserDetailsService {
 
     private final UserRepo repo;
 
+    @Autowired
     public UserServicesDet(UserRepo userRepository){
         this.repo = userRepository;
     }
