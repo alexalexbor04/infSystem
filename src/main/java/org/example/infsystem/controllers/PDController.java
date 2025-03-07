@@ -1,7 +1,6 @@
 package org.example.infsystem.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.infsystem.dto.PasswordDataDTO;
 import org.example.infsystem.entities.Address;
 import org.example.infsystem.entities.PasswordData;
@@ -36,12 +35,12 @@ public class PDController {
 
     @PostMapping("/new")
     public ResponseEntity<PasswordData> addUsServ(@RequestBody PasswordData us) throws JsonProcessingException {
-        System.out.println("Полученные данные:");
-        System.out.println("Login: " + us.getUser_login());
-        System.out.println("Password: " + us.getUser_password());
-        System.out.println("User ID: " + us.getUserId());
-        System.out.println("Address ID: " + us.getAddressId());
-        System.out.println(new ObjectMapper().writeValueAsString(us));
+//        System.out.println("Полученные данные:");
+//        System.out.println("Login: " + us.getUser_login());
+//        System.out.println("Password: " + us.getUser_password());
+//        System.out.println("User ID: " + us.getUserId());
+//        System.out.println("Address ID: " + us.getAddressId());
+//        System.out.println(new ObjectMapper().writeValueAsString(us));
 
         try {
             Address address = adRepo.findById(us.getAddressId().getId())

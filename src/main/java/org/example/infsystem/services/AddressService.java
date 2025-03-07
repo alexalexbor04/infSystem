@@ -34,7 +34,7 @@ public class AddressService {
         return repo.findById(id).get();
     }
 
-    public Address findById(Long id) {
-        return repo.findById(id).get();
-    }
+//    public Address findById(Long id) {
+//        return repo.findById(id).get();
+//    }
 }

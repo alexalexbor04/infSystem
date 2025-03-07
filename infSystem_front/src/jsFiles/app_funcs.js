@@ -27,44 +27,6 @@ function getUserRole() {
     return payload.roles.name;
 }
 
-// function fetchDataList(apiUrl, jsonData, unique = false, page) {
-//     const userRole = getUserRole();
-//     console.log(userRole) //отладка временно
-//
-//     fetch(apiUrl, {
-//         method: "GET",
-//         headers: getAuthHeaders(),
-//     })
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error(`Ошибка запроса: ${response.status}`);
-//             }
-//             return response.json();
-//         })
-//         .then(data => {
-//             if (unique === true) {
-//                 console.log(localStorage.getItem("token"));
-//                 const userName = JSON.parse(atob(localStorage.getItem("token").split(".")[1])).sub;
-//                 jsonData = data.filter(item => item.userName === userName);
-//             } else {
-//                 console.log(localStorage.getItem("token")); // отладка
-//                 jsonData = data;
-//             }
-//
-//             switch (page) {
-//                 case "addresses"
-//             }
-//
-//             renderTable(jsonData);
-//         })
-//         .catch(error => {
-//             console.error("ошибка fetch:", error);
-//             console.log(localStorage.getItem("token")); // отладка
-//             alert("Ошибка загрузки данных. Пожалуйста, проверьте авторизацию.");
-//             // window.location.href = "/auth/login";
-//         });
-// }
-
 function deleteRecord(id, apiUrl, fetchCallback) {
     const confirmDelete = confirm("Вы уверены, что хотите удалить эту запись?");
     if (!confirmDelete) return;
